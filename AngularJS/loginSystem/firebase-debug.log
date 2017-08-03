@@ -1,0 +1,28 @@
+[debug] [2017-07-20T20:59:32.237Z] ----------------------------------------------------------------------
+[debug] [2017-07-20T20:59:32.241Z] Command:      D:\NodeJS\node.exe C:\Users\Tayyab\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-07-20T20:59:32.242Z] CLI Version:  3.9.1
+[debug] [2017-07-20T20:59:32.242Z] Platform:     win32
+[debug] [2017-07-20T20:59:32.243Z] Node Version: v6.9.2
+[debug] [2017-07-20T20:59:32.243Z] Time:         Fri Jul 21 2017 01:59:32 GMT+0500 (Pakistan Standard Time)
+[debug] [2017-07-20T20:59:32.243Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-20T20:59:32.292Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-20T20:59:32.294Z] > authorizing via signed-in user
+[debug] [2017-07-20T20:59:32.304Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/ngloginsys  
+ Fri Jul 21 2017 01:59:32 GMT+0500 (Pakistan Standard Time)
+[debug] [2017-07-20T20:59:37.943Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-20T20:59:37.946Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/ngloginsys/tokens  
+ Fri Jul 21 2017 01:59:37 GMT+0500 (Pakistan Standard Time)
+[debug] [2017-07-20T20:59:39.145Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\xampp\htdocs\ng\practice\angularRegistration'...
+[info] 
+[debug] [2017-07-20T20:59:39.156Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/ngloginsys  
+ Fri Jul 21 2017 01:59:39 GMT+0500 (Pakistan Standard Time)
+[debug] [2017-07-20T20:59:41.271Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-20T20:59:41.273Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1044954933136/clients/_:getWebAppConfig  
+ Fri Jul 21 2017 01:59:41 GMT+0500 (Pakistan Standard Time)
+[debug] [2017-07-20T20:59:42.780Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-20T20:59:43.231Z] TypeError: Cannot read property 'public' of undefined
+[error] 
+[error] Error: An unexpected error has occurred.
