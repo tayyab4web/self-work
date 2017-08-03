@@ -1,0 +1,12 @@
+{
+    "elements": {
+        "ng-include": {
+            "attributes": {
+                "src": {}
+            }
+        },
+        "cart-summary": {},
+        "ng-view": {}
+    },
+    "attributes": {}
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html ng-app="sportsStore">
+    <head>
+        <title>SportsStore</title>    
+        <script src="angular.minv1.4.8.js"></script>   
+        <link href="bootstrap.min.css" rel="stylesheet" />   
+        <link href="bootstrap-theme.min.css" rel="stylesheet" />  
+        <script>
+//                    angular.module("sportsStore", ["customFilters", "cart", "ngRoute"])
+//                            .config(["$routeProvider",function ($routeProvider) {
+//                                $routeProvider.when("/checkout", {
+//                                    templateUrl: "views/checkoutSummary.html"
+//                                });
+//                                $routeProvider.when("/products", {
+//                                    templateUrl: "views/productList.html"
+//                                });
+//                                $routeProvider.otherwise({
+//                                    templateUrl: "views/productList.html"
+//                                });
+//                            }]);
+                    angular.module("sportsStore", ["customFilters", "cart", "ngRoute"])
+                            .config(function ($routeProvider) {
+                                $routeProvider.when("/complete", {
+                                    templateUrl: "views/thankYou.html"
+                                });
+                                $routeProvider.when("/placeorder", {
+                                    templateUrl: "views/placeOrder.html"
+                                });
+                                $routeProvider.when("/checkout", {
+                                    templateUrl: "views/checkoutSummary.html"
+                                });
+                                $routeProvider.when("/products", {
+                                    templateUrl: "views/productList.html"
+                                });
+                                $routeProvider.otherwise({
+                                    templateUrl: "views/productList.html"
+                                });
+                            });
+
+
+
+        </script> 
+        <script src="controllers/sportsStore.js"></script>   
+        <script src="filters/customFilters.js"></script>   
+        <script src="controllers/productListControllers.js"></script> 
+        <script src="controllers/checkoutControllers.js"></script> 
+        <script src="components/cart/cart.js"></script>
+        <script src="ngmodules/angular-routev1.4.8.js"></script>
+
+    </head> 
+    <body ng-controller="sportsStoreCtrl">
+        <nav class="navbar navbar-inverse">
+            <a href="#" class="navbar-brand">Sports Store</a>
+            <cart-summary />
+        </nav>
+        <div class="alert alert-danger" ng-show="data.error">
+            Error: {{data.error.status}}. The product data was not loaded.
+            <a href="/app.html" class="alert-link">Click hare to try again.</a>
+        </div>
+    <ng-view /> 
+</body> 
+</html>
