@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="printable">
+            <table class="table">
+<!--                <tr>
+                    <td align="left">Customer Id: {{prodData.id}}</td>
+                    <td align="right">Date: {{prodData.datetime| date}}</td>
+                </tr>-->
+                <tr>
+                    <td  colspan="2" class="products">
+                        <table class="table">
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Qty</th>
+                                <th>Disc</th>
+                                <th>Sub Total</th>
+                            </tr>
+                            <tr ng-repeat="products in prodData.products">
+                                <td>{{products.count}}</td>
+                                <td>{{products.selectedValue}}</td> 
+                                <td>{{products.price| number}}</td> 
+                                <td>{{products.quantity}}</td> 
+                                <td>{{products.discount}}</td> 
+                                <td>{{(products.price * products.quantity) - products.discount | number}}</td> 
+                            </tr>
+                            <tr>
+                                <td colspan="6"><hr></td>
+                            </tr>
+                            <tr class="total">
+                                <td class="content">Total</td>
+                                <td colspan="4">&nbsp;</td>
+                                <td class="content"  >{{calTotal() | number}}</td>
+                            </tr>
+                        </table>
+                    </td> 
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

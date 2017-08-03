@@ -1,0 +1,23 @@
+<div id="loginContainer">
+    <div class="well" ng-controller="inventoryAdminCtrl">
+        <div class="alert alert-info" ng-hide="authenticateError">
+            Enter Username and Password and press Login button to authenticate.
+        </div>
+        <div class="alert alert-warning" ng-show="authenticateError">
+            Authentication Failed ({{authenticateError.status}}). Try again.
+        </div>
+        <form name="authForm" novalidate="">
+            <div class="form-group">
+                <label>Username</label>
+                <input class="form-control" ng-model="username" name="username" required=""> 
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" name="password" ng-model="password" required="">
+            </div>
+            <div class="text-center">
+                <button class="border-button no-bottom-margin" ng-click="authenticate(username, password)" ng-disabled="authForm.$invalid" >Login</button>
+            </div>
+        </form>
+    </div>
+</div>

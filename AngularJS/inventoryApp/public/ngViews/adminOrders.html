@@ -1,0 +1,77 @@
+<div   ng-controller="salesRecordCtrl" >
+    <div id="datetimeContainer">
+        <div class="dropdown form-group dropdown-start-parent">
+            <label>Start Date</label>
+            <a class="dropdown-toggle" id="dropdownStart" role="button" data-toggle="dropdown" data-target=".dropdown-start-parent" >
+                <div class="input-group date">
+                    <input type="text" class="form-control" data-ng-model="dateRangeStart" formatted-date format="medium"  >
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <datetimepicker data-ng-model="dateRangeStart"
+                                data-datetimepicker-config="{ dropdownSelector: '#dropdownStart', renderOn: 'end-date-changed' }"
+                                data-on-set-time="startDateOnSetTime()"
+                                data-before-render="startDateBeforeRender($dates)"></datetimepicker>
+            </ul>
+        </div>
+
+        <div class="dropdown form-group dropdown-end-parent">
+            <label>End Date</label>
+            <a class="dropdown-toggle" id="dropdownEnd" role="button" data-toggle="dropdown" data-target=".dropdown-end-parent">
+                <div class="input-group date">
+                    <input type="text" class="form-control" data-ng-model="dateRangeEnd" formatted-date format="medium" >
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+            </a>
+            <ul  class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <datetimepicker data-ng-model="dateRangeEnd"
+                                data-datetimepicker-config="{ dropdownSelector: '#dropdownEnd', renderOn: 'start-date-changed' }"
+                                data-on-set-time="endDateOnSetTime()"
+                                data-before-render="endDateBeforeRender($view, $dates, $leftDate, $upDate, $rightDate)"></datetimepicker>
+            </ul>
+        </div>
+    </div>
+    <!---end of datetime container--->
+    <div id="salesRecordContainer">
+        <div data-ng-hide="isExists()">
+            <h3>No Record Found on Specified Date Range </h3>
+        </div>
+        <div data-ng-show="isExists()">
+            <table class="table table-responsive">
+                <tr>
+                    <th>#</th>
+                    <th>Items Name</th>
+                    <th>Total Qty</th>
+                    <th>Total Price</th>
+                    <th>Total Discount</th>
+                    <th>Sub Total</th>
+                </tr>
+                <tr data-ng-repeat="itemNames in getAllProductItems()">
+                    <td>{{$index + 1}}</td>
+                    <td>{{itemNames}}</td>
+                    <td>{{countSold(itemNames) | number}}</td>
+                    <td>{{calcPrice(itemNames) | number}}</td>
+                    <td>{{calcDiscount(itemNames) | number}}</td>
+                    <td>{{calcSubTotal(itemNames) | number}}</td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td colspan="4"></td>
+                    <td>{{calcGrandTotal() | number}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!--<td colspan="6">
+                        <table class="table">
+                            <tr ng-repeat="products in prodData.products">
+                                <td>{{products.count}}</td>
+                            </tr>
+                        </table>
+</td>-->

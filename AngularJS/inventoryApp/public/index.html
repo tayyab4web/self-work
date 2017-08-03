@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="inventoryApp">
+    <head>
+        <title>Inventory Controll System</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css" >
+        <!-- CSS Implementing Plugins -->
+
+
+        <!--        < object id = "factory" style = "display:none"
+                                    classid = "clsid:1663ed61-23eb-11d2-b92f-008048fdd814"
+                                    codebase = "http://[your path here]/smsx.cab#Version=8,0,0,56" >
+                                    < /object>
+                                    < script src = "/scripts/jquery-1.5.1.min.js" type = "text/javascript" > < /script>
+                                    < script src = "/scripts/meadco-scriptx-1.0.2.js" type = "text/javascript" > < /script>-->
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/ionicons.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/menu.css" />
+        <link rel="stylesheet" type="text/css" href="css/sidebar.css" />
+        <!-- JS -->
+        <script type="text/javascript" src="js/modernizr.js"></script>
+        <script type="text/javascript" src="js/snap.svg-min.js"></script>
+
+
+</head>
+<body class="image-background" ng-controller="inventoryAppCtrl">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="loading-animation">&nbsp;</div>
+    </div>
+    <!-- /Preloader -->
+
+    <!-- Overlay -->
+    <div id="section-home" class="home-section-wrap center">
+        <div class="section-overlay"></div>
+    </div>
+    <!-- /Overlay -->
+
+    <!-- container -->
+    <div class="containers">
+        <!-- menu -->
+        <nav id="menu" class="menu">
+            <button class="menu__handle"><span>Menu</span></button>
+            <div class="menu__inner">
+                <ul>
+                    <li><a href="#/!"><i class="fa fa-fw fa-home"></i><span>&nbsp;</span></a></li>
+                    <li><a href="#!listingSales"><i class="fa fa-fw fa-eye"></i><span>&nbsp;</span></a></li>
+                    <li><a href="/admin.html"><i class="fa fa-fw fa-gear"></i><span>&nbsp;</span></a></li>
+
+                </ul>
+            </div>
+            <div class="morph-shape" data-morph-open="M300-10c0,0,295,164,295,410c0,232-295,410-295,410" data-morph-close="M300-10C300-10,5,154,5,400c0,232,295,410,295,410">
+                <svg width="100%" height="100%" viewBox="0 0 600 800" preserveAspectRatio="none">
+                <path fill="none" d="M300-10c0,0,0,164,0,410c0,232,0,410,0,410"/>
+                </svg>
+            </div>
+        </nav>
+        <!-- /menu -->
+
+        <!-- main -->
+        <div class="main">
+            <!-- header -->
+            <ng-include src="'ngViews/header.html'"></ng-include>
+            <!-- /header -->
+
+            <!-- section -->                 
+            <section class="section fullscreen site-main">
+                <div class="container-section">
+                    <div class="container-table">
+                        <div class="content-table">
+                            <!-- bt-carousel -->
+                            <div class="bt-carousel">
+
+                                <!-- home section -->
+                                <div class="item-slide show">
+                                    <!-- container -->
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-10 col-md-offset-1">
+
+                                                <!-- content slide -->
+                                                <div class="content-slide">
+                                                    <!--  <ng-include src="'ngViews/main.html'"></ng-include>-->
+                                                    <ng-view></ng-view> 
+                                                </div>
+                                                <!-- /endof content slide -->
+                                            </div>
+                                        </div><!-- /row -->
+                                    </div><!-- /container -->
+                                </div>
+                                <!-- /home section -->
+
+                            </div><!-- /bt-carousel -->
+                        </div>
+                    </div>
+                </div>
+            </section><!-- /section -->  
+        </div><!-- /main -->
+    </div><!-- /container -->        
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/retina.min.js"></script>
+    <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+    <script type="text/javascript" src="js/jquery.parallaxify.min.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="js/jquery.appear.js"></script>
+    <script type="text/javascript" src="js/classie.js"></script>
+    <script type="text/javascript" src="js/sidebar.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/customJS.js"></script>
+    <script type="text/javascript" src="ng/angular.js"></script>
+    <script type="text/javascript" src="ng/angular-route.js"></script>
+    <script type="text/javascript" src="ng/angular-resource.js"></script>
+    <script type="text/javascript" src="ng/customNg.js"></script>
+    <script type="text/javascript" src="ng/listingSalesCtrl.js"></script>
+</body>
+</html>

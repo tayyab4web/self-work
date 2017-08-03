@@ -1,0 +1,21 @@
+{
+	"type": "Collection",
+	"properties": {
+		"datetime": {
+			"name": "datetime",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "datetime",
+			"order": 0
+		},
+		"products": {
+			"name": "products",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "products",
+			"order": 1
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"type": "Collection",
+	"properties": {
+		"productName": {
+			"name": "productName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "productName",
+			"order": 0
+		}
+	}
+}

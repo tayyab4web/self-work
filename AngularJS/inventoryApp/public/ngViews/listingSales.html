@@ -1,0 +1,75 @@
+<div ng-controller="listingSalesCtrl">
+
+    <div class="notFound" ng-hide="isExists()" >
+        <h1>No Products Found!</h1>
+    </div>
+    <div id="searchContainer" class="row">
+        <div class="col-xs-6">
+            <select name="viewSorted" ng-options="item as item for item in sortBy" ng-model="viewSorted">
+            </select>
+        </div>
+        <div class="col-xs-6">
+            <input type="text" placeholder="Search hare..."  ng-model="searchItem">
+        </div>
+
+    </div>
+    <div class="listingContainer" ng-show="isExists()" >
+        <div class="prodItem animated flipInX" ng-repeat="sold in (products| filter :searchItem |orderBy:'-datetime' | viewby:viewSorted
+                                )">
+            <div class="caption">
+                <div class="lt">
+                    <span>Customer Id:</span>
+                    <span>{{sold.id}}</span>
+                </div>
+                <div class="rt">
+                    <span>Date:</span>
+                    <span>{{sold.datetime| date}}</span>
+                </div>
+            </div>
+            <div class="body">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Items</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Dis</th>
+                            <th>Subtotal</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="item in sold.products">
+                            <td>{{item.count}}</td> 
+                            <td>{{item.selectedValue}}</td> 
+                            <td>{{item.price| number}}</td> 
+                            <td>{{item.quantity}}</td> 
+                            <td>{{item.discount}}</td> 
+                            <td>{{(item.price * item.quantity) - item.discount | number}}</td> 
+                            <td>
+                                <!--                                <button class="btn btn-lg btn-primary" ng-click="startEditProduct(item)">Edit</button>-->
+                                <!--                                <button class="btn btn-sm btn-warning" ng-click="deleteProduct(item)">Return</button>-->
+                                <button class="btn btn-sm btn-warning" ng-click="returnProd(sold.id, item)">Return</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"><hr></td>
+                        </tr>
+                    <div calculate-total="sold.products" ></div>
+                    <tr>
+                        <td colspan="6" class="last">
+                    <calculate-total prod-data="sold.products"></calculate-total>
+
+                    </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="grandTotal">
+        Grand Total: {{calculateGrandTotal() | number}}
+    </div>
+</div>

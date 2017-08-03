@@ -1,0 +1,33 @@
+<form name="myForm" novalidate="">
+    <table id="addInventory" class="table table-resposive">
+        <thead>
+            <tr>
+                <th class="text-center">Sr. NO</th>
+                <th class="text-center">Product</th>
+                <th class="text-center">Price</th>
+                <th class="text-center">Quantity</th>
+                <th class="text-center">Discount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="animated slideInDown" ng-repeat="prod in products">
+                <td>{{prod.count}}</td>
+                <td>
+                    <select name="selectedValue" ng-options="item.productName as item.productName for item in currentProducts" ng-model="prod.selectedValue">
+                    </select>
+                </td>
+                <td><input  name="price" class="focusMe" ng-keyup="addNewRow($event)" type="number" placeholder="Price" ng-model="prod.price" required></td>
+                <td><input name="quantity" ng-keyup="addNewRow($event)" type="number"  placeholder="Qty" value="1" ng-model="prod.quantity"  ></td>
+                <td><input name="discount" ng-keyup="addNewRow($event)" type="number" placeholder="Discount" ng-model="prod.discount"  ></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" ng-click="submitForm(products)"  ng-disabled="myForm.$invalid" class="pull-right border-button no-bottom-margin">Sale</button>
+</form>
+<div id="boxContainer">
+    <div class="totalBox">
+        Total: {{(isNotANum()) ? 0 : calculateTotal() | number}}
+    </div>
+</div>
+
+
