@@ -1,0 +1,14 @@
+	table--emailsListing
+
+id
+to		emailAddress
+from		emailAddress
+dateTime	2005-05-13T19:02:05
+subject		demo email	
+body		lorem ipsum dummy solid emali template.
+-----------------------------------------------------------
+	table--setting
+id
+name
+email
+age

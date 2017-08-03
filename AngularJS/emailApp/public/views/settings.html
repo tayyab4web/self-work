@@ -1,0 +1,50 @@
+<div class="container-fluid col-xs-8 col-xs-offset-2" ng-controller="settingsCtrl">
+    <h1>Update your settings</h1>
+    <form novalidate name="form" >
+        <fieldset>
+            <legend>Update Settings</legend>
+            <div class="form-group">
+                <label  for="name">Name</label>
+                <input id="name" class="form-control" type="text" placeholder="Name" name="name"  ng-model="setting.name"  maxlength="30" required >
+                <div ng-show="form.name.$dirty && form.name.$invalid">
+                    <div class="error" ng-show="form.name.$error.required">
+                        Your Name is required!
+                    </div>
+                    <div class="error" ng-show="form.name.$error.maxlength">
+                        Name too lengthy 
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label  for="email">Email</label>
+                <input id="email" class="form-control" type="email" placeholder="Email" name="email" ng-model="setting.email" required>
+                <div ng-show="form.email.$dirty && form.email.$invalid">
+                    <div class="error" ng-show="form.email.$error.email">
+                        Please give a valid email
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label  for="age">Age</label>
+                <input id="age" class="form-control" type="number" placeholder="Age" name="age" ng-model="setting.age" min="12" max="200" required>
+                <div ng-show="form.age.$dirty && form.age.$invalid">
+                    <div class="error" ng-show="form.age.$error.min">
+                        must be older than 12
+                    </div>
+                    <div class="error" ng-show="form.age.$error.max">
+                        Old aged not allowed! 
+                    </div>
+
+                </div>
+            </div>
+            <div class="btn-block">
+                <button ng-show="exists" class="btn btn-primary" ng-click="createOrEdit(setting)">Update</button>
+                <button ng-hide="exists" class="btn btn-primary" ng-click="createOrEdit(setting)" ng-disabled="form.$error.required || form.$invalid">Create</button>
+                <button class="btn btn-danger" ng-click="delete(setting)" ng-disabled="!exists">Remove</button>
+            </div>
+        </fieldset>
+    </form>
+    <!--    <button ng-click="populateForm()">btn</button>-->
+    <hr>
+
+</div>

@@ -1,0 +1,102 @@
+form  .error {
+    color: lightcoral;
+    font-weight: bold;
+    padding-top: 10px;
+}
+.email-block {
+    display: block;
+    overflow: hidden;
+    background: lightblue;
+    padding: 24px 12px;
+    border: 1px solid #aaa;
+    margin-bottom: 1px;
+}
+.email-block.selected,.email-block:hover {
+    background-color: lightsteelblue;
+}
+.gravitor,.text-block{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: small;
+    font-weight: bold;
+
+}
+.email-block  .subject,.email-block  .from{
+    display: block
+
+}
+.header .from{font-weight: bold;}
+.mails .from,.mails {
+    display: inline-block;
+    vertical-align: middle;
+    background:lightgray;
+}
+.mails{
+    padding: 6px 18px;
+    border-radius: 7px;
+}
+.content .subject {
+    padding: 12px 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.content .datetime {
+    margin-bottom: 12px;
+}
+.content > .header {margin-bottom: 16px;}
+.form-section{
+    display: block;
+    background: lightslategrey;
+    padding: 0 0 36px 0;
+    border-radius: 12px;
+    margin-bottom: 36px;
+
+}
+legend{
+    background-color: lightsteelblue;
+    padding: 6px 16px;
+    text-align: center;
+    border-radius: 4px;
+}
+.form-section .form-group.input-group{
+    padding: 0 36px;
+}
+.form-section textarea{
+    outline: none;
+    resize: none; 
+}
+#mainContent{
+    margin-top: 60px;
+}
+#sidebar{
+
+}
+#navigation a > span {
+    font-size: 28px;
+    color: #fff;
+    margin-right: 40px;
+}
+loader{
+    margin-right: 36px;
+    display: inline-block;
+    vertical-align: middle;
+}
+loader > img {
+    margin-bottom: 16px;
+}
+.dirty-section{margin-top: 20px;}
+/*.ng-pristine {
+    border: 2px solid green;
+    border-radius: 12px;
+    padding: 30px;
+}
+.ng-dirty.ng-invalid {
+    border: 1px solid red;
+    border-radius: 12px;
+    padding: 30px;
+}
+.ng-dirty.ng-valid {
+    border: 1px solid green;
+    border-radius: 12px;
+    padding: 30px;
+}*/

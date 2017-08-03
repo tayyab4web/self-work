@@ -1,0 +1,65 @@
+<div class="row" id="mainContent">
+
+    <div class="col col-xs-3" id="sidebar" ng-controller="emailsListingCtrl">
+        <div class="input-group">
+
+            <input type="search" class="form-control" placeholder="Search Email" ng-model="searchEmail">
+            <span class="glyphicon glyphicon-search input-group-addon"></span>
+        </div>
+        <div class="email-block" ng-repeat="email in (allEmails| toArray:false | filter:searchEmail)  " ng-click="setSelected(email)"  ng-class="{selected: isSelected(email)}">
+            <div class="gravitor" >
+                <img src="../images/gravitar.jpg" alt="">
+            </div>
+            <div class="text-block">
+                <span class="subject">{{email.subject}}</span>
+                <span class="from">{{email.from}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="col col-xs-8 content">
+        <div class="blank-section" ng-hide="isContent">
+            <h1>No Email Selected </h1>
+            <!--            <email-listing></email-listing>-->
+        </div>
+        <div class="dirty-section" ng-show="isContent">
+            <div class="form-section row" ng-show="isReply">
+                <form name="replyForm" ng-submit="">
+                    <fieldset>
+                        <legend>Reply form</legend>
+                        <div class="form-group input-group">
+                            <label class="input-group-addon">To: </label>
+                            <input class="form-control" name="to" ng-model="reply.to">
+                        </div>
+                        <div class="form-group input-group">
+                            <label class="input-group input-group-addon">Subject: </label>
+                            <input class="form-control" name="subject" ng-model="reply.subject">
+                        </div>
+                        <div class="form-group input-group">
+                            <label class="input-group input-group-addon">Body: </label>
+                            <textarea class="form-control" name="body" ng-model="reply.body"></textarea>
+                        </div>
+                        <div class="form-group input-group  pull-right">
+                            <button class="btn btn-info" ng-click="sendReply()">Send</button>
+                            <button class="btn btn-danger" ng-click="cancelReply()">Cancel</button>
+                        </div>
+                    </fieldset>
+
+                </form>
+            </div>
+            <div class="row header">
+                <div class="col col-xs-8 ">
+                    <div class="mails">
+                        <span class="from">From: {{currentEmail.from}}</span>
+                    </div>
+                    <div class="subject">Subject: {{currentEmail.subject}}  {{datetime |date:"dd/mm/yyyy"}}</div>
+                </div>
+                <div class="col col-xs-2 col-xs-offset-2">
+                    <div class="datetime pull-right">{{currentEmail.datetime|date:"dd/mm/yyyy" }}</div>
+                    <button class="form-control btn-info" ng-click="doReply()">Reply</button>
+                </div>
+            </div>
+            <div class="body" ng-bind="currentEmail.body"></div>
+
+        </div>
+    </div>
+</div>

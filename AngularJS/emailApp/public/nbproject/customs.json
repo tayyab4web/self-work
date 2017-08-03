@@ -1,0 +1,11 @@
+{
+    "elements": {
+        "ng-include": {
+            "attributes": {
+                "src": {}
+            }
+        },
+        "ng-view": {}
+    },
+    "attributes": {}
+}

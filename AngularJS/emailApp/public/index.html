@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="emailApp">
+    <head>
+        <title>Email Manager</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="bootstrap.min.css" >
+        <link rel="stylesheet" href="style.css" >
+        <script src="angular.minv1.4.8.js"></script>
+        <script src="modules/angular-routev1.4.8.js"></script>
+        <script src="modules/angular-resourcev1.4.8.js"></script>
+        <script>
+                    var emailApp = angular.module("emailApp", ["ngRoute", "ngResource","angular-toArrayFilter"]);
+                    emailApp.config(function ($routeProvider) {
+                        $routeProvider.when('/', {
+                            templateUrl: "views/home.html",
+                            controller: "homeCtrl"
+                        });
+                        $routeProvider.when('/settings', {
+                            templateUrl: "views/settings.html",
+                            controller: "settingsCtrl"
+                        });
+                        $routeProvider.otherwise({
+                            templateUrl: "views/home.html",
+                            controller: "homeCtrl"
+                        });
+                    });
+
+        </script>
+    </head>
+    <body ng-controller="homeCtrl">
+    <ng-include src="'views/topNav.html'"></ng-include>
+    <ng-view></ng-view>
+    <script src="controllers/appCtrl.js"></script>
+    <script src="directives/custom-directives.js"></script>
+    <script src="modules/toArrayFilter.js"></script>
+</body>
+</html>
