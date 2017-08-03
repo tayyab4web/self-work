@@ -1,0 +1,6 @@
+a {
+	cursor:pointer;
+}
+div[ui-view] {
+    margin-top: 64px;
+}
